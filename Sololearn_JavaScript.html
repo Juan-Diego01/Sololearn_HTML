@@ -1405,6 +1405,7 @@
 <html>
     <body>
         <script>
+            function 
             element.addEventListener(event, function, useCapture);
         </script>
     </body>
@@ -1436,8 +1437,15 @@
 
 <html>
     <body>
+        <button id="demo">Start</button>
         <script>
-            
+            var btn = document.getElementById("demo");
+            btn.addEventListener("click", myFunction);
+
+            function myFunction() {
+                alert(Math.random());
+                btn.removeEventListener("click", myFunction);
+            }
         </script>
     </body>
 </html>
@@ -1446,7 +1454,8 @@
 <html>
     <body>
         <script>
-            
+            function
+            addEventListener(event, function, useCapture);
         </script>
     </body>
 </html>
@@ -1455,7 +1464,95 @@
 <html>
     <body>
         <script>
-            
+            //Capturing propagation
+            elem1.addEventListener("click", myFunction, true); 
+
+            //Bubbling propagation
+            elem2.addEventListener("click", myFunction, false);
+        </script>
+    </body>
+</html>
+
+
+<html>
+    <body>
+        <div>
+            <button>Prev</button>
+            <img id ="slider"
+        src="http://www.sololearn.com/uploads/slider/1.jpg"
+        width="200px" height="100px"/>
+        </div>
+
+    </body>
+</html>
+
+
+<html>
+    <body>
+        <script>
+            var images = [
+                "http://www.sololearn.com/uploads/slider/1.jpg", 
+                "http://www.sololearn.com/uploads/slider/2.jpg", 
+                "http://www.sololearn.com/uploads/slider/3.jpg"
+            ]; 
+        </script>
+    </body>
+</html>
+
+
+<html>
+    <body>
+        <div>
+            <button onclick="prev()"> Prev </button>
+            <img id="slider" src="http://www.sololearn.com/uploads/slider/1.jpg" 
+              width="200px" height="100px"/>
+            <button onclick="next()"> Next </button>
+          </div>
+    </body>
+</html>
+
+
+<html>
+    <body>
+        <script>
+            var images = [
+                "http://www.sololearn.com/uploads/slider/1.jpg", 
+                "http://www.sololearn.com/uploads/slider/2.jpg", 
+                "http://www.sololearn.com/uploads/slider/3.jpg"
+            ];
+            var num = 0;
+
+        function next() {
+            var slider = document.getElementById("slider");
+        num++;
+        if(num >= images.lenght){
+         num=0
+        }
+        slider.src = images[num];
+        }
+
+        function prev() {
+            var slider = document.getElementById("slider");
+            num--;
+            if(num<0) {
+                num= images.lenght-1;
+            }
+            slider.src = images [num];
+        }
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            <form onsubmit="return validate()" method="post">
+                Number: <input type="text" name="num1" id="num1" />
+                <br />
+                Repeat: <input type="text" name="num2" id="num2" />
+                <br />
+                <input type="submit" value="Submit" />
+            </form>
         </script>
     </body>
 </html>
@@ -1464,7 +1561,37 @@
 <html>
     <body>
         <script>
-            
+            function validate() {
+                var n1 = document.getElementById("num1");
+                var n2 = document.getElementById("num2");
+                if(n1.value !="" && n2.value != "") {
+                    if(n1.value == n2.value) {
+                        return true;
+                    }
+                }
+                alert("The values should be equal and not blank");
+                return false;
+            }
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            var a = 10;
+            const b = 'hello';
+            let c = true;
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            var a = 10;
+            const b = 'hello';
+            let c = true;
         </script>
     </body>
 </html>
@@ -1473,7 +1600,43 @@
 <html>
     <body>
         <script>
-            
+            if (true) {
+                let name = 'Jack';
+            }
+            alert(name); //generates an error
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            function vartest() {
+                var x = 1;
+                if (true) {
+                    var x = 2; //same variable
+                    console.log(x); //2
+                }
+                console.log(x); //2
+            }
+            function letTest(); {
+                let x = 1;
+                if (true) {
+                    let x = 2; //different variable
+                    console.log(x); //2
+                }
+                console.log(x); //1
+            }
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            for (let i = 0; i < 3; i++) {
+                document.write(i);
+            }
         </script>
     </body>
 </html>
@@ -1482,7 +1645,18 @@
 <html>
     <body>
         <script>
-            
+            const a = 'Hello';
+            a = 'Bye';
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let name = 'David';
+            let msg = 'Welcome'+ name + '!';
+            console.log(msg);
         </script>
     </body>
 </html>
@@ -1491,16 +1665,9 @@
 <html>
     <body>
         <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
+            let name = 'David';
+            let msg = 'Welcome ${name}!';
+            console.log(msg);
         </script>
     </body>
 </html>
@@ -1508,25 +1675,10 @@
 <html>
     <body>
         <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
+            let a = 8;
+            let b = 34;
+            let msg = 'The sum is ${a+b}';
+            console.log(msg);
         </script>
     </body>
 </html>
@@ -1534,16 +1686,10 @@
 <html>
     <body>
         <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
+            let arr = [1, 2, 3];
+            for (let k = 0; k < arr.length; k++) {
+                console.log(arr[k]);
+            }
         </script>
     </body>
 </html>
@@ -1551,25 +1697,10 @@
 <html>
     <body>
         <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
+            let obj = {a: 1, b: 2, c: 3};
+            for (let v in obj) {
+                console.log(v);
+            }
         </script>
     </body>
 </html>
@@ -1577,16 +1708,10 @@
 <html>
     <body>
         <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
+            let list = ["x", "y", "z"];
+            for (let val of list) {
+                console.log(val);
+            }
         </script>
     </body>
 </html>
@@ -1594,16 +1719,9 @@
 <html>
     <body>
         <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
+            for (let ch of "Hello") {
+                console.log(ch);
+            }
         </script>
     </body>
 </html>
@@ -1611,25 +1729,10 @@
 <html>
     <body>
         <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
+            function add (x, y) {
+                var sum = x + y;
+                console.log(sum);
+            }
         </script>
     </body>
 </html>
@@ -1637,25 +1740,10 @@
 <html>
     <body>
         <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
+            const add = (x, y) => {
+                var sum = x + y;
+                console.log(sum); 
+            }
         </script>
     </body>
 </html>
@@ -1663,34 +1751,7 @@
 <html>
     <body>
         <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
-        </script>
-    </body>
-</html>
-
-
-<html>
-    <body>
-        <script>
-            
+            const greet = x => "Welcome" + x;
         </script>
     </body>
 </html>
@@ -1698,7 +1759,7 @@
 <html>
     <body>
         <script>
-            
+            const x = () => alert ("Hi");
         </script>
     </body>
 </html>
@@ -1706,7 +1767,11 @@
 <html>
     <body>
         <script>
-            
+            var arr = [2, 3, 7, 8];
+
+            arr.forEach(function(el) {
+                console.log(el * 2);
+            });
         </script>
     </body>
 </html>
@@ -1714,8 +1779,740 @@
 <html>
     <body>
         <script>
+            var arr = [2, 3, 7, 8];
             
+            arr.forEach(v => {
+                console.log(v * 2);
+            });
         </script>
     </body>
 </html>
 
+<html>
+    <body>
+        <script>
+            function test(a, b = 3, c = 42) {
+                return a + b + c;
+            }
+            console.log(test(5)); //50
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            const test = (a, b = 3, c = 42) => {
+             return a + b + c;
+            }
+            console.log(test(5)); //50 
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            lt tree = {
+                height: 10,
+                color: 'green',
+                grow() {
+                    this.height += 2;
+                }
+            };
+            tree.grow();
+            console.log(tree.height); //12
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let height = 5;
+            let health = 100;
+
+            let athlete = {
+                height,
+                health
+            };
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            var a = {x:1, x:2, x:3, x:4};
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let prop = 'name';
+            let id = '1234';
+            let mobile = '08923';
+
+            let user = {
+                [prop]: 'Jack',
+                ['user_${id}']: '${mobile}'
+            }
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            var i = 0;
+            var a = {
+                ['foo' + ++i]: i,
+                ['foo' + ++i]: i,
+                ['foo' + ++i]: i
+            };
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            var param = 'size';
+            var config = {
+                [param]: 12,
+                ['mobile' + param.charAt(0).toUpperCase() + 
+            param.slice(1)]: 4
+            };
+            console.log(config.mobileSize);
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let person = {
+                name: 'Jack',
+                age: 18,
+                sex: 'male'
+            };
+            let student = {
+                name: 'Bob',
+                age: 20,
+                xp: '2'
+            };
+            let newStudent = Object.assign({}, person, student);
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let person = {
+                name: 'Jack',
+                age: 18
+            };
+
+            let newPerson = person; //newPerson references person
+            newPerson.name = 'Bob';
+
+            console.log(person.name); //Bob
+            console.log(newPerson.name); //Bob
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let person = {
+                name: 'Jack',
+                age: 18
+            };
+
+            let newPerson = Object.assing({}, person);
+            newPerson.name = 'Bob';
+
+            console.log(person.name); //Jack
+            console.log(newPerson.name); //Bob
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let person = {
+                name: 'Jack',
+                age: 18
+            };
+
+            let newPerson = Object.assign({}, person, {name:'Bob'});
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let arr = ['1', '2', '3'];
+            let [one, two, three] = arr;
+
+            console.log(one); //1
+            console.log(two); //2
+            console.log(three); //3
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let a = () => {
+                return [1,2,3];
+            };
+
+            let [one, , two] = a();
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let a, b, c = 4, d = 8;
+            [a, b = 6] = [2]; //a = 2, b = 6
+
+            [c, d] = [d, c]; //c = 8, d = 4
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let obj = {h:100, s: true};
+            let {h, s} = obj;
+
+            console.log(h); //100
+            console.log(h); //true
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let a, b;
+            ({a, b} = {a: 'Hello', b: 'Jack'});
+
+            console.log(a + b); // Hello Jack
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let {a, b} = {a: 'Helo', b: 'Jack'};
+            console.log(a + b);
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            var o = {h: 42, s: true};
+            var {h: foo, s: bar} = o;
+
+            //console,log(h) //Error
+            console,log(foo); //42
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            var obj = {id: 42, name: "Jack"};
+
+            let {id = 10, age = 20} = obj;
+
+            console.log(id); // 42
+            console.log(age); // 20
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+           function containsAll(arr) {
+               for (let k = 1; l < arguments.length; k++) {
+                   let num = arguments[k];
+                   if (arr.indexOf(num) === -1) {
+                       return false;
+                   }
+               }
+               return true;
+           }
+           let x = [2, 4, 6, 7];
+           console.log = [2, 4, 6, 7];
+           console.log(containsAll(x, 2, 4, 7));
+           console.log(containsAll(x, 6, 4, 9));
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            function containsAll (arr, ...nums) {
+                for (let num of nums) {
+                    if (arr.indexOf(num) === -1) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            function myFunction(w, x, y, z) {
+                console.log(w + y + z);
+            }
+            var args = [1, 2, 3];
+            myFunction(...args, 4);
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            var dateFields = [1970, 0, 1]; //1 Jan 1970
+            var date = new Date(...dateFields);
+            console.log(date);
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            var arr = ["One", "Two", "Five"];
+
+            arr.splice(2, 0, "Three");
+            arr.splice(3, 0, "Four");
+            console.log(arr);
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let newArr = ['Three', 'Four'];
+            let arr = ['One', 'Two', ...newArr, 'Five'];
+            console.log(arr);
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            const obj1 = { foo: 'bar', x: 42};
+            const obj2 = { foo: 'bar', y: 5};
+
+            const clonedObj = {...obj1}; // {foo: "bar", x: 42}
+            const mergedObj = {...obj1, ...obj2}; //{foo: "baz", x: 42, y: 5}
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            const obj1 = { foo: 'bar', x: 42};
+            const obj2 = { foo: 'baz', y: 5};
+            const merge = (...objects) => ({...objects});
+
+            let mergedObj = merge(obj1, obj2);
+            // {0: {foo: 'bar', x: 42}, 1: { foo: 'baz', y: 5}}
+
+            let mergedObj2 = merge({}, obj1, obj2);
+            // {0: {}, 1: {foo: 'bar', x: 42}, 2: {foo: 'baz', y: 5} }
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            class Rectangle {
+                constructor(height, width) {
+                    this.height = height;
+                    this.width = width;
+                }
+            }
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            const square = new Rectangle(5, 5);
+            const poster = new Rectangle(2, 3);
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            var Square = class Rectangle {
+                constructor(height, width) {
+                    this.height = height;
+                    this.width = width;
+                }
+            };
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            var Square = class {
+                constructor(height, width) {
+                    this.height = height;
+                    this.width = width;
+                }
+            };
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            class Rectangle {
+                constructor(height, width) {
+                    this.height = height;
+                    this.width = widthM
+                }
+                get area() {
+                    return this.calcArea();
+                }
+                calcArea() {
+                    return this.height * this.width;
+                }
+            }
+            const square = new Rectangle(5, 5);
+            console.log(square.area); //25
+        </script>
+    </body>
+</html>
+
+3 --> bark
+
+<html>
+    <body>
+        <script>
+            class Point {
+                constructor(x, y) {
+                    this.x = x;
+                    this.y = y;
+                }
+                static distance(a, b) {
+                    const dx = a.x - b.x;
+                    const dy = a.y - b.y;
+                    return Math.hypot(dx, dy);
+                }
+            }
+            const p1 = new Point(7, 2);
+            const p2 = new Point(3, 8);
+
+            console.log(Pint.distance(p1, p2));
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            class Animal {
+                constructor(name) {
+                    this.name = name;
+                }
+                speak() {
+                    console.log(this.name + 'makes a noise.');
+                }
+            }
+            class Dog extends Animal {
+                speak() {
+                    console.log(this.name + 'barks.')
+                }
+            }
+            
+            let dog = new Dog('Rex');
+            dog.speak();
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            class Animal {
+                constructor(name) {
+                    this,name = name;
+                }
+                speak() {
+                    console.log(this.name + 'makes a noise.');
+                }
+            }
+            
+            class Dog extends Animal {
+                speak() {
+                    super.speak(); //Super
+                    console.log(this.name + 'barks.');
+                }
+            }
+
+            let dog = new Dog('Rex');
+            dog.speak();
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let map = new Map([['k1', 'v1'], ['k2', 'v2']]);
+
+            console.log(map.size); //2
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let map = new Map();
+
+            map.set('k1', 'v1').sset('k2','v2');
+
+            console.log(map.get('k1')); //v1
+
+            console.log(map.has('k2')); //true
+
+            for (let kv of map.entries())
+                console.log(kv[0] + ":" +kv[1]);
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let set = new Set([1, 2, 4, 2, 59, 9, 4, 9, 1]);
+
+            console.log(set.size); //5
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            let set = new();
+
+            set.add(5).add(9).add(59).add(9);
+
+            console.log(set.has(9));
+
+            for (let v of set.values())
+                console.log(v);
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            setTimeout(function() {
+                console.log("Work 1");
+                setTimeout(function(){
+                    console.log("Work 2");
+                }, 1000);
+            }, 1000);
+            console.log("End");
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            new Promise(function(resolve, reject) {
+                // Work
+                if (success)
+                    resolve(result);
+                else
+                    reject(Error("failure"));
+            }); 
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            function asyncFunc(work) {
+                return new Promise(function(resolve, reject) {
+                    if (work ==="")
+                        reject(Error("Nothing"));
+                    setTimeout(function() {
+                        resolve(work);
+                    }, 1000);
+                });
+            }
+            asyncFunc("Work 1") //Task 1
+                .then(function(result) {
+                    console.log(result);
+                    return asyncFunc("Work 2"); //Task 2
+                }, function(error) {
+                    console.log(error);
+                });
+                console.log("End");
+        </script>
+    </body>
+</html>
+
+<html>
+    <body>
+        <script>
+            // lib/math.js
+            export ​let sum = (x, y) => { return x + y; }
+            export ​let pi = 3.14;
+
+
+            // app.j
+            import * ​as math from "lib/math"
+            console.log('2p = + ${math.sum(math.pi, math.pi)}')
+        </script>
+    </body>
+</html>
+
+<!--En lo siguiente está el código de los problemas-->
+
+<!--Trip planner-->
+function main() {
+    var distance = parseInt(readLine(), 10);
+    //your code goes here
+    const speed = 40; 
+    const time = distance/speed; 
+    const timeInMinutes= time*60;
+    console.log(timeInMinutes );
+     
+    }
+
+<!--the snail in the well-->
+function main() {
+    var depth = parseInt(readLine(), 10);
+    //your code goes here
+    var dia = 0;
+    var total = 0;
+    while(total<depth){
+        dia = dia + 1;
+        total = total + 7;
+        if(total >= depth){
+            console.log(dia);
+            break;
+
+        }
+        total = total - 2;
+    }
+
+}
+
+<!--currency coverter-->
+function main() {
+    var amount = parseFloat(readLine(), 10);
+    var rate = parseFloat(readLine(), 10);
+
+    function convert(amount, rate) {
+        return amount*rate;
+    }
+    
+    console.log(convert(amount, rate));
+}
+
+<!--contact manager-->
+function contact(name, number) 
+{
+    this.name = name;
+    this.number = number;
+    this.print = print;
+}
+
+function print()
+{
+    console.log(this.name + ": " + this.number);
+}
+
+var a = new contact("David", 12345);
+var b = new contact("Amy", 987654321)
+a.print();
+b.print();
+
+<!--store manager-->
+function main() {
+    var increase = parseInt(readLine(), 10);
+    var prices = [98.99, 15.2, 20, 1026];
+    //your code goes here
+    for(var i=0;i<=prices.length-1;i++){
+        prices[i]=prices[i]+increase;
+    }
+    console.log(prices);
+}
+
+<!--words-->
+class Add {
+    constructor(...words) {
+        this.words = words;
+    }
+    //your code goes here
+    print(){
+        var y ="";
+        for (x of this.words) {
+          if(x == ","){
+            x = "";
+          }
+          else{
+            y += "$" + x;
+          }
+        }
+  
+        y = y + "$";
+        console.log(y);
+    }
+  }
+  
+  var x = new Add("hehe", "hoho", "haha", "hihi", "huhu");
+  var y = new Add("this", "is", "awesome");
+  var z = new Add("lorem", "ipsum", "dolor", "sit", "amet", ",", "consectetur", "adipiscing", "elit");
+  x.print();
+  y.print();
+  z.print();
