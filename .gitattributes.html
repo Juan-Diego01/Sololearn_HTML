@@ -451,14 +451,22 @@ function drop(ev) {
 
 <function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
+<<<<<<< HEAD
 }>
 </function>
 
+=======
+}
+>>>>>>> dd643d4292612bbdb6953679cbf256464eaebaf5
 
 <function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
+<<<<<<< HEAD
     ev.target.appendChild(document.getElementById(data));></function>
+=======
+    ev.target.appendChild(document.getElementById(data));>
+>>>>>>> dd643d4292612bbdb6953679cbf256464eaebaf5
 </function>
 
 <img src="image.svg" alt="" height="300"/>
